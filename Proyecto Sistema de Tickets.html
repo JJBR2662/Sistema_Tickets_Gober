@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.22">
+<meta name="generator" content="Asciidoctor 2.0.23">
 <title>Proyecto Sistema de Tickets v1.3</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -442,340 +442,411 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Índice de Contenido</div>
 <ul class="sectlevel1">
-<li><a href="#_recursos">1. <span class="icon"><i class="fa fa-wrench"></i></span> Recursos</a></li>
-<li><a href="#_rúbrica">2. <span class="icon"><i class="fa fa-check-square"></i></span> Rúbrica</a></li>
-<li><a href="#_envió_de_tickets_por_medio_de_api_hacia_redmine">3. <span class="icon"><i class="fa fa-code"></i></span> Envió de Tickets por medio de API hacia Redmine</a>
+<li><a href="#_envió_de_tickets_por_medio_de_api_hacia_redmine">1. <span class="icon"><i class="fa fa-code"></i></span> Envió de Tickets por medio de API hacia Redmine</a>
 <ul class="sectlevel2">
-<li><a href="#_redmine">3.1. <span class="icon"><i class="fa fa-ticket"></i></span> Redmine</a>
+<li><a href="#_redmine">1.1. <span class="icon"><i class="fa fa-ticket"></i></span> Redmine</a>
 <ul class="sectlevel3">
-<li><a href="#_descripción">3.1.1. <span class="icon"><i class="fa fa-info"></i></span> Descripción</a></li>
-<li><a href="#_licencia">3.1.2. <span class="icon"><i class="fa fa-copyright"></i></span> Licencia</a></li>
-<li><a href="#_desarrollo">3.1.3. <span class="icon"><i class="fa fa-gear"></i></span> Desarrollo</a>
+<li><a href="#_descripción">1.1.1. <span class="icon"><i class="fa fa-info"></i></span> Descripción</a></li>
+<li><a href="#_licencia">1.1.2. <span class="icon"><i class="fa fa-copyright"></i></span> Licencia</a></li>
+<li><a href="#_desarrollo">1.1.3. <span class="icon"><i class="fa fa-gear"></i></span> Desarrollo</a>
 <ul class="sectlevel4">
-<li><a href="#_backend">3.1.3.1. <span class="icon"><i class="fa fa-server"></i></span> BACKEND</a></li>
-<li><a href="#_api">3.1.3.2. <span class="icon"><i class="fa fa-plug"></i></span> API</a></li>
-<li><a href="#_frontend">3.1.3.3. <span class="icon"><i class="fa fa-code"></i></span> FRONTEND</a></li>
+<li><a href="#_backend">1.1.3.1. <span class="icon"><i class="fa fa-server"></i></span> BACKEND</a></li>
+<li><a href="#_api">1.1.3.2. <span class="icon"><i class="fa fa-plug"></i></span> API</a></li>
+<li><a href="#_frontend">1.1.3.3. <span class="icon"><i class="fa fa-code"></i></span> FRONTEND</a></li>
 </ul>
 </li>
-<li><a href="#_gestión">3.1.4. <span class="icon"><i class="fa fa-gear"></i></span> Gestión</a>
+<li><a href="#_gestión">1.1.4. <span class="icon"><i class="fa fa-gear"></i></span> Gestión</a>
 <ul class="sectlevel4">
-<li><a href="#_proyecto_12">3.1.4.1. <span class="icon"><i class="fa fa-book"></i></span> Proyecto 1/2</a></li>
-<li><a href="#_peticiones">3.1.4.2. <span class="icon"><i class="fa fa-ticket"></i></span> Peticiones</a></li>
-<li><a href="#_proyecto_22">3.1.4.3. <span class="icon"><i class="fa fa-book"></i></span> Proyecto 2/2</a></li>
+<li><a href="#_proyecto_12">1.1.4.1. <span class="icon"><i class="fa fa-book"></i></span> Proyecto 1/2</a></li>
+<li><a href="#_peticiones">1.1.4.2. <span class="icon"><i class="fa fa-ticket"></i></span> Peticiones</a></li>
+<li><a href="#_proyecto_22">1.1.4.3. <span class="icon"><i class="fa fa-book"></i></span> Proyecto 2/2</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#_autor">3.2. <span class="icon"><i class="fa fa-users"></i></span> Autor</a></li>
-<li><a href="#_referencias">3.3. <span class="icon"><i class="fa fa-book"></i></span> Referencias</a></li>
+<li><a href="#_autor">1.2. <span class="icon"><i class="fa fa-users"></i></span> Autor</a></li>
+<li><a href="#_referencias">1.3. <span class="icon"><i class="fa fa-book"></i></span> Referencias</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 <div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p><span class="icon"><i class="fa fa-warning"></i></span> <strong class="black yellow-background">NOTA 1:</strong> Las <strong>NOTAS</strong> <strong class="red">NO</strong> deben ser incluidas en este trabajo, así como las <strong>imagenes</strong> que no se utilicen.</p>
-</div>
-</div>
-</div>
 <div class="sect1">
-<h2 id="_recursos">1. <span class="icon"><i class="fa fa-wrench"></i></span> Recursos</h2>
-<div class="sectionbody">
-<div class="imageblock text-center">
-<div class="content">
-<img src="imagenes/asciidoctor-logo-bl.svg" alt="asciidoctor logo bl" width="300">
-</div>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-right valign-top">Tipo</th>
-<th class="tableblock halign-left valign-top">Valor</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-right valign-top"><p class="tableblock">Formato</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-pencil"></i></span> <a href="https://asciidoctor.org/">Asciidoctor</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-right valign-top"><p class="tableblock">Herramienta</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-edit"></i></span> <a href="https://code.visualstudio.com/">Visual Studio Code</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-right valign-top"><p class="tableblock">Extensiones de VSC</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-plug"></i></span> <a href="https://marketplace.visualstudio.com/items?itemName=asciidoctor.asciidoctor-vscode">AsciiDoc</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-right valign-middle"><p class="tableblock">Referencias</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-book"></i></span> <a href="https://docs.asciidoctor.org/">Asciidoctor Documentation Home</a></p>
-<p class="tableblock"><span class="icon"><i class="fa fa-book"></i></span> <a href="https://nelbren.com/es/documentation/Documentation_with_Markdown_Marp_and_AsciiDoctor/">Documentación con Markdown, Marp y AsciiDoctor</a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_rúbrica">2. <span class="icon"><i class="fa fa-check-square"></i></span> Rúbrica</h2>
-<div class="sectionbody">
-<div class="imageblock text-center">
-<div class="content">
-<img src="imagenes/rúbrica.png" alt="rúbrica" width="300">
-</div>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 14.2857%;">
-<col style="width: 71.4285%;">
-<col style="width: 14.2858%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-right valign-middle"><span class="icon"><i class="fa fa-list"></i></span> Inciso</th>
-<th class="tableblock halign-left valign-middle"><span class="icon"><i class="fa fa-comment"></i></span> Descripción</th>
-<th class="tableblock halign-right valign-middle"><span class="icon"><i class="fa fa-check"></i></span> Puntos</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle" colspan="3"><p class="tableblock"><span class="icon"><i class="fa fa-database"></i></span> <strong>BACKEND</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-right valign-middle"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Imagenes</p></td>
-<td class="tableblock halign-right valign-middle"><p class="tableblock">2</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-right valign-middle"><p class="tableblock">2</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Instrucciones</p></td>
-<td class="tableblock halign-right valign-middle"><p class="tableblock">2</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle" colspan="3"><p class="tableblock"><span class="icon"><i class="fa fa-code"></i></span> <strong>API</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-right valign-middle"><p class="tableblock">3</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Código</p></td>
-<td class="tableblock halign-right valign-middle"><p class="tableblock">2</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-right valign-middle"><p class="tableblock">4</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Imagenes</p></td>
-<td class="tableblock halign-right valign-middle"><p class="tableblock">2</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle" colspan="3"><p class="tableblock"><span class="icon"><i class="fa fa-laptop"></i></span> <strong>FRONTEND</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-right valign-middle"><p class="tableblock">5</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Código</p></td>
-<td class="tableblock halign-right valign-middle"><p class="tableblock">2</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-right valign-middle"><p class="tableblock">6</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Imagenes</p></td>
-<td class="tableblock halign-right valign-middle"><p class="tableblock">2</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-right valign-middle"><p class="tableblock">6</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Envio de texto (asunto)</p></td>
-<td class="tableblock halign-right valign-middle"><p class="tableblock">1</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-right valign-middle"><p class="tableblock">7</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Envio de imagen (captura de pantalla)</p></td>
-<td class="tableblock halign-right valign-middle"><p class="tableblock">1</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle" colspan="3"><p class="tableblock"><span class="icon"><i class="fa fa-wrench"></i></span> <strong>GESTIÓN</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-right valign-middle"><p class="tableblock">8</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Imagenes</p></td>
-<td class="tableblock halign-right valign-middle"><p class="tableblock">2</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle" colspan="3"><p class="tableblock"><span class="icon"><i class="fa fa-book"></i></span> <strong>DOCUMENTACIÓN</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-right valign-middle"><p class="tableblock">9</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Formato AsciiDoctor</p></td>
-<td class="tableblock halign-right valign-middle"><p class="tableblock">2</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-right valign-middle"><p class="tableblock">10</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Redacción y ortografía</p></td>
-<td class="tableblock halign-right valign-middle"><p class="tableblock">2</p></td>
-</tr>
-</tbody>
-<tfoot>
-<tr>
-<td class="tableblock halign-center valign-middle" colspan="2"><p class="tableblock">Total</p></td>
-<td class="tableblock halign-right valign-middle"><p class="tableblock"><strong>20</strong></p></td>
-</tr>
-</tfoot>
-</table>
-<div class="paragraph">
-<p><span class="icon"><i class="fa fa-warning"></i></span> <strong class="black yellow-background">NOTA 2:</strong> Las secciones de los <strong>recursos</strong> y la <strong>rúbrica</strong> <strong class="red">NO</strong> deben ser incluidos en este trabajo.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_envió_de_tickets_por_medio_de_api_hacia_redmine">3. <span class="icon"><i class="fa fa-code"></i></span> Envió de Tickets por medio de API hacia Redmine</h2>
+<h2 id="_envió_de_tickets_por_medio_de_api_hacia_redmine">1. <span class="icon"><i class="fa fa-code"></i></span> Envió de Tickets por medio de API hacia Redmine</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_redmine">3.1. <span class="icon"><i class="fa fa-ticket"></i></span> Redmine</h3>
+<h3 id="_redmine">1.1. <span class="icon"><i class="fa fa-ticket"></i></span> Redmine</h3>
 <div class="imageblock text-center">
 <div class="content">
 <img src="https://www.redmine.org/attachments/download/3458/redmine_logo_v1.png" alt="redmine logo v1">
 </div>
 </div>
 <div class="sect3">
-<h4 id="_descripción">3.1.1. <span class="icon"><i class="fa fa-info"></i></span> Descripción</h4>
+<h4 id="_descripción">1.1.1. <span class="icon"><i class="fa fa-info"></i></span> Descripción</h4>
 <div class="paragraph">
-<p><strong>Redmine</strong> es ..</p>
+<p><strong>Redmine</strong> es una plataforma web de código abierto para la gestión de proyectos e incidencias. En este proyecto se utiliza como el <strong>backend</strong> del sistema de tickets: recibe las solicitudes HTTP de la interfaz, valida los permisos del usuario, registra las incidencias y las conserva en una base de datos.</p>
+</div>
+<div class="paragraph">
+<p>La instalación se realizó de forma local en <strong>Debian GNU/Linux 13.5</strong> ejecutado mediante WSL. La arquitectura implementada es la siguiente:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">Navegador en Windows
+        |
+        | http://localhost
+        v
+Apache HTTP Server + Phusion Passenger
+        |
+        v
+Redmine 6.0.5
+        |
+        v
+MariaDB</code></pre>
+</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_licencia">3.1.2. <span class="icon"><i class="fa fa-copyright"></i></span> Licencia</h4>
+<h4 id="_licencia">1.1.2. <span class="icon"><i class="fa fa-copyright"></i></span> Licencia</h4>
 <div class="paragraph">
-<p>&#8230;&#8203;</p>
+<p>Redmine se distribuye como software libre bajo la licencia <strong>GNU General Public License versión 2 (GPL-2.0)</strong>. Esta licencia permite usar, estudiar, modificar y redistribuir el software, siempre que se mantengan las condiciones de la licencia.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_desarrollo">3.1.3. <span class="icon"><i class="fa fa-gear"></i></span> Desarrollo</h4>
+<h4 id="_desarrollo">1.1.3. <span class="icon"><i class="fa fa-gear"></i></span> Desarrollo</h4>
 <div class="sect4">
-<h5 id="_backend">3.1.3.1. <span class="icon"><i class="fa fa-server"></i></span> BACKEND</h5>
+<h5 id="_backend">1.1.3.1. <span class="icon"><i class="fa fa-server"></i></span> BACKEND</h5>
 <div class="paragraph">
-<p><span class="icon"><i class="fa fa-warning"></i></span> <strong class="black yellow-background">NOTA 3:</strong> Puede solicitar acceso al servidor del instructor, para usarlo de servidor de <strong>BACKEND</strong>, si <strong class="red">NO</strong> desea realizar los pasos del <strong>BACKEND</strong> y aceptar su respectiva penalización.</p>
+<p>El backend se configuró con Redmine, MariaDB, Apache y Phusion Passenger. MariaDB almacena los datos persistentes de los proyectos y tickets; Apache publica la aplicación web y Passenger ejecuta la aplicación Ruby on Rails de Redmine.</p>
 </div>
 <div class="sect5">
 <h6 id="_instalación"><span class="icon"><i class="fa fa-download"></i></span> Instalación</h6>
 <div class="paragraph">
-<p><span class="icon"><i class="fa fa-warning"></i></span> <strong class="black yellow-background">NOTA 4:</strong> Aquí va(n) una(s) captura(s) de pantalla(s)</p>
+<p>La instalación se realizó dentro de Debian GNU/Linux 13.5 en WSL. Primero se actualizaron los índices de paquetes y luego se instalaron Redmine, su soporte para MariaDB/MySQL, Apache y Passenger.</p>
 </div>
 <div class="sect6">
-<h7 id="_captura_de_pantalla"><span class="icon"><i class="fa fa-picture-o"></i></span> Captura de pantalla</h7>
-<div class="ulist">
-<ul>
+<h7 id="_capturas_de_pantalla"><span class="icon"><i class="fa fa-picture-o"></i></span> Capturas de pantalla</h7>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p>Evidencia</p>
+<p>Paquetes principales instalados</p>
+<div class="paragraph">
+<p>La evidencia muestra los paquetes instalados con estado <code>ii</code>: Apache 2.4.67, Passenger 6.0.26, MariaDB 11.8.6, Redmine 6.0.5 y el paquete de soporte <code>redmine-mysql</code>.</p>
+</div>
 <div class="imageblock text-center">
 <div class="content">
-<img src="imagenes/instalación_backend.png" alt="instalación backend" width="1000">
+<img src="imagenes/backend_paquetes_instalados.png" alt="backend paquetes instalados" width="1000">
 </div>
 </div>
 </li>
-</ul>
+<li>
+<p>Acceso local inicial a Redmine</p>
+<div class="paragraph">
+<p>Después de completar la instalación y la publicación con Apache, Redmine responde en la dirección local <code>http://localhost</code>.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="imagenes/backend_redmine_inicio.png" alt="backend redmine inicio" width="1000">
+</div>
+</div>
+</li>
+</ol>
 </div>
 </div>
 <div class="sect6">
 <h7 id="_instrucciones"><span class="icon"><i class="fa fa-terminal"></i></span> Instrucciones</h7>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">comandos para instalar el redmine en Debian GNU/Linux 13.2 o superior</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"># Actualizar la información de paquetes y el sistema
+sudo apt update
+sudo apt upgrade -y
+
+# Instalar los componentes del backend
+sudo apt install -y \
+  mariadb-server \
+  apache2 \
+  libapache2-mod-passenger \
+  redmine-mysql \
+  curl
+
+# Activar e iniciar los servicios necesarios
+sudo systemctl enable --now mariadb
+sudo systemctl enable --now apache2</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>Los paquetes instalados fueron los siguientes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>mariadb-server</code>: servidor de base de datos.</p>
+</li>
+<li>
+<p><code>apache2</code>: servidor HTTP que expone Redmine en el puerto 80.</p>
+</li>
+<li>
+<p><code>libapache2-mod-passenger</code>: módulo que permite a Apache ejecutar Redmine.</p>
+</li>
+<li>
+<p><code>redmine</code> y <code>redmine-mysql</code>: aplicación de tickets y su soporte para MariaDB/MySQL.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <div class="sect5">
 <h6 id="_configuración"><span class="icon"><i class="fa fa-wrench"></i></span> Configuración</h6>
 <div class="paragraph">
-<p><span class="icon"><i class="fa fa-warning"></i></span> <strong class="black yellow-background">NOTA 4:</strong> Aquí va(n) una(s) captura(s) de pantalla(s)</p>
+<p>La configuración se realizó en tres niveles: publicación de Redmine con Apache y Passenger, acceso administrativo inicial y habilitación de la API REST para la integración posterior con el frontend.</p>
 </div>
 <div class="sect6">
-<h7 id="_captura_de_pantalla_2"><span class="icon"><i class="fa fa-picture-o"></i></span> Captura de pantalla</h7>
-<div class="ulist">
-<ul>
+<h7 id="_capturas_de_pantalla_2"><span class="icon"><i class="fa fa-picture-o"></i></span> Capturas de pantalla</h7>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p>Evidencia</p>
+<p>Base de datos de la instancia de Redmine</p>
+<div class="paragraph">
+<p>La instalación por paquetes de Debian creó la base de datos <code>redmine_default</code> en MariaDB. Esta base de datos conserva la información de usuarios, proyectos, tickets y configuraciones de la instancia.</p>
+</div>
 <div class="imageblock text-center">
 <div class="content">
-<img src="imagenes/configuracion_backend.png" alt="configuracion backend" width="1000">
+<img src="imagenes/backend_base_datos_redmine_default.png" alt="backend base datos redmine default" width="1000">
 </div>
 </div>
 </li>
-</ul>
+<li>
+<p>Habilitación de Passenger y publicación del sitio de Redmine en Apache</p>
+<div class="paragraph">
+<p>La siguiente evidencia muestra la activación del módulo Passenger, la habilitación del sitio <code>redmine.conf</code>, la desactivación del sitio predeterminado y la validación de la configuración de Apache con <code>Syntax OK</code>. Durante la comprobación inicial se mostró una advertencia de Passenger relacionada con el alcance de una directiva; no impidió que Apache recargara la configuración. La evidencia posterior de acceso a Redmine confirma que la publicación quedó operativa.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="imagenes/backend_apache_passenger_configuracion.png" alt="backend apache passenger configuracion" width="1000">
+</div>
+</div>
+</li>
+<li>
+<p>Cuenta administrativa configurada</p>
+<div class="imageblock text-center">
+<div class="content">
+<img src="imagenes/backend_cuenta_admin.png" alt="backend cuenta admin" width="1000">
+</div>
+</div>
+</li>
+<li>
+<p>API REST habilitada desde <code>Administration &gt; Settings &gt; API</code></p>
+<div class="imageblock text-center">
+<div class="content">
+<img src="imagenes/backend_api_rest_habilitada.png" alt="backend api rest habilitada" width="1000">
+</div>
+</div>
+</li>
+<li>
+<p>Permisos seleccionados para el rol <code>Emisor API</code></p>
+<div class="imageblock text-center">
+<div class="content">
+<img src="imagenes/backend_permisos_emisor_api_1.png" alt="backend permisos emisor api 1" width="750">
+</div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="imagenes/backend_permisos_emisor_api_2.png" alt="backend permisos emisor api 2" width="750">
+</div>
+</div>
+</li>
+<li>
+<p>Rol <code>Emisor API</code> creado en Redmine</p>
+<div class="imageblock text-center">
+<div class="content">
+<img src="imagenes/backend_rol_emisor_api.png" alt="backend rol emisor api" width="1000">
+</div>
+</div>
+</li>
+<li>
+<p>Proyecto de Redmine utilizado por el sistema</p>
+<div class="paragraph">
+<p>Se creó el proyecto <strong>Sistema de Tickets</strong> con el identificador <code>sistema-tickets</code>. Este proyecto es el contenedor donde Redmine registra todas las incidencias enviadas por la aplicación web.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="imagenes/backend_proyecto_sistema_tickets.png" alt="backend proyecto sistema tickets" width="1000">
+</div>
+</div>
+</li>
+<li>
+<p>Usuario de integración agregado al proyecto</p>
+<div class="paragraph">
+<p>El usuario no administrativo <code>frontend_tickets</code> se agregó como miembro del proyecto y recibió únicamente el rol <code>Emisor API</code>. La API key usada por el formulario pertenece a esta cuenta y no a la cuenta administradora.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="imagenes/backend_miembro_frontend_tickets.png" alt="backend miembro frontend tickets" width="1000">
+</div>
+</div>
+</li>
+</ol>
 </div>
 </div>
 <div class="sect6">
 <h7 id="_instrucciones_2"><span class="icon"><i class="fa fa-terminal"></i></span> Instrucciones</h7>
+<div class="paragraph">
+<p>Primero se creó un sitio de Apache que apunta a la carpeta pública de Redmine. La variable <code>REDMINE_INSTANCE</code> indica que se utiliza la instancia predeterminada configurada por el paquete de Debian. La directiva <code>PassengerDefaultUser</code> no se coloca dentro del bloque <code>&lt;VirtualHost&gt;</code> porque Apache emite una advertencia cuando se configura en ese alcance; Passenger utiliza la configuración global instalada por el paquete de Debian.</p>
+</div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">comandos para instalar configurar el aplicativo de tickets</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo tee /etc/apache2/sites-available/redmine.conf &gt; /dev/null &lt;&lt;'EOF'
+&lt;VirtualHost *:80&gt;
+    ServerName localhost
+    DocumentRoot /usr/share/redmine/public
+
+    RailsEnv production
+    SetEnv REDMINE_INSTANCE "default"
+
+    PassengerEnabled on
+    PassengerAppRoot /usr/share/redmine
+    PassengerAppEnv production
+    PassengerAppGroupName redmine_default
+
+    &lt;Directory /usr/share/redmine/public&gt;
+        Options -MultiViews
+        AllowOverride All
+        Require all granted
+    &lt;/Directory&gt;
+
+    ErrorLog ${APACHE_LOG_DIR}/redmine_error.log
+    CustomLog ${APACHE_LOG_DIR}/redmine_access.log combined
+&lt;/VirtualHost&gt;
+EOF
+
+sudo a2enmod passenger
+sudo a2dissite 000-default.conf
+sudo a2ensite redmine.conf
+sudo apache2ctl configtest
+sudo systemctl restart apache2</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>Después se ingresó a <code>http://localhost</code> con la cuenta inicial <code>admin</code>, se actualizó la contraseña administrativa y se habilitó la opción <strong>Enable REST web service</strong> en <code>Administration &gt; Settings &gt; API</code>.</p>
+</div>
+<div class="paragraph">
+<p>Para separar las credenciales administrativas de las credenciales utilizadas por la aplicación, se creó el usuario <code>frontend_tickets</code>. Este usuario se agregó únicamente al proyecto <strong>Sistema de Tickets</strong> con el rol <code>Emisor API</code>. El rol conserva los permisos mínimos <strong>View issues</strong> y <strong>Add issues</strong> para el tracker <strong>Bug</strong>. También se configuró el flujo de trabajo inicial <code>New issue -&gt; New</code>, necesario para que una incidencia pueda ser creada mediante la API.</p>
+</div>
+<div class="paragraph">
+<p>La clave de API de <code>frontend_tickets</code> se obtiene en <strong>My account</strong> y se conserva exclusivamente en <code>frontend/config.local.js</code>. Ese archivo está incluido en <code>.gitignore</code>; por lo tanto, la clave no se publica en el repositorio ni se muestra en esta documentación.</p>
 </div>
 </div>
 </div>
 <div class="sect5">
 <h6 id="_ejecución"><span class="icon"><i class="fa fa-terminal"></i></span> Ejecución</h6>
 <div class="paragraph">
-<p><span class="icon"><i class="fa fa-warning"></i></span> <strong class="black yellow-background">NOTA 4:</strong> Aquí va(n) una(s) captura(s) de pantalla(s)</p>
+<p>Para ejecutar el backend se inician MariaDB y Apache. Posteriormente se abre Redmine en el navegador usando la dirección local <code>http://localhost</code>.</p>
 </div>
 <div class="sect6">
-<h7 id="_captura_de_pantalla_3"><span class="icon"><i class="fa fa-picture-o"></i></span> Captura de pantalla</h7>
-<div class="ulist">
-<ul>
-<li>
-<p>Evidencia</p>
+<h7 id="_captura_de_pantalla"><span class="icon"><i class="fa fa-picture-o"></i></span> Captura de pantalla</h7>
+<div class="paragraph">
+<p>La pantalla siguiente confirma el acceso administrativo a la instancia de Redmine después de iniciar sesión.</p>
+</div>
 <div class="imageblock text-center">
 <div class="content">
-<img src="imagenes/ejecucion_backend.png" alt="ejecucion backend" width="1000">
+<img src="imagenes/backend_cuenta_admin.png" alt="backend cuenta admin" width="1000">
 </div>
-</div>
-</li>
-</ul>
 </div>
 </div>
 <div class="sect6">
 <h7 id="_instrucciones_3"><span class="icon"><i class="fa fa-terminal"></i></span> Instrucciones</h7>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">comandos para ejecutar el aplicativo de tickets</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"># Iniciar los servicios si no están activos
+sudo systemctl start mariadb
+sudo systemctl start apache2
+
+# Verificar que ambos servicios estén activos
+systemctl is-active mariadb
+systemctl is-active apache2
+
+# Comprobar la sintaxis de Apache
+sudo apache2ctl configtest
+
+# Abrir Redmine desde Windows
+# http://localhost</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>La respuesta esperada para los dos servicios es <code>active</code> y Apache debe mostrar <code>Syntax OK</code>. Una vez disponible la interfaz, Redmine puede administrarse desde el navegador mediante la cuenta administrativa.</p>
 </div>
 </div>
 </div>
 <div class="sect5">
 <h6 id="_verificación"><span class="icon"><i class="fa fa-check"></i></span> Verificación</h6>
 <div class="paragraph">
-<p><span class="icon"><i class="fa fa-warning"></i></span> <strong class="black yellow-background">NOTA 6:</strong> Evidenciar la versión del Sistema Operativo y aplicación en una(s) captura(s) de pantalla(s)</p>
+<p>La verificación comprueba la versión del sistema operativo, las versiones instaladas del backend y el estado de los servicios. Durante la instalación se confirmó Debian GNU/Linux 13.5, Redmine 6.0.5, Apache 2.4.67 y MariaDB 11.8.6.</p>
 </div>
 <div class="sect6">
-<h7 id="_captura_de_pantalla_4"><span class="icon"><i class="fa fa-picture-o"></i></span> Captura de pantalla</h7>
-<div class="ulist">
-<ul>
-<li>
-<p>Evidencia</p>
+<h7 id="_captura_de_pantalla_2"><span class="icon"><i class="fa fa-picture-o"></i></span> Captura de pantalla</h7>
+<div class="paragraph">
+<p>La siguiente evidencia reúne la salida de los comandos de comprobación. Se observa que <code>apache2</code> y <code>mariadb</code> están <code>active</code>, Apache devuelve <code>Syntax OK</code> y la solicitud local responde <code>HTTP/1.1 200 OK</code>. Por tanto, Redmine quedó disponible y publicado mediante Apache y Passenger.</p>
+</div>
 <div class="imageblock text-center">
 <div class="content">
-<img src="imagenes/verificacion_os_y_app.png" alt="verificacion os y app" width="1000">
+<img src="imagenes/backend_verificacion_completa.png" alt="backend verificacion completa" width="1000">
 </div>
-</div>
-</li>
-</ul>
 </div>
 </div>
 <div class="sect6">
 <h7 id="_instrucciones_4"><span class="icon"><i class="fa fa-terminal"></i></span> Instrucciones</h7>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cat /etc/debian_version
-# comando para verificar la versión de redmine</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"># Versión del sistema operativo
+cat /etc/os-release
+cat /etc/debian_version
+
+# Versiones de los paquetes principales
+printf 'Redmine: '
+dpkg-query -W -f='${Version}\n' redmine
+
+printf 'Apache: '
+dpkg-query -W -f='${Version}\n' apache2
+
+printf 'MariaDB: '
+dpkg-query -W -f='${Version}\n' mariadb-server
+
+# Estado de los servicios
+systemctl is-active apache2
+systemctl is-active mariadb
+
+# Validación de Apache y prueba HTTP local
+sudo apache2ctl configtest
+curl -I http://localhost</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>La instalación queda validada cuando se cumplen las siguientes condiciones:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Debian reporta la versión <code>13.5</code>.</p>
+</li>
+<li>
+<p>Los paquetes de Redmine, Apache y MariaDB aparecen instalados.</p>
+</li>
+<li>
+<p><code>apache2</code> y <code>mariadb</code> responden <code>active</code>.</p>
+</li>
+<li>
+<p>Apache responde <code>Syntax OK</code>.</p>
+</li>
+<li>
+<p>Redmine se muestra correctamente en <code>http://localhost</code>.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_api">3.1.3.2. <span class="icon"><i class="fa fa-plug"></i></span> API</h5>
+<h5 id="_api">1.1.3.2. <span class="icon"><i class="fa fa-plug"></i></span> API</h5>
 <div class="imageblock text-center">
 <div class="content">
 <img src="https://assets.goodfirms.co/glossary/1655457664-api.png" alt="1655457664 api">
@@ -784,8 +855,44 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect5">
 <h6 id="_descripción_2"><span class="icon"><i class="fa fa-info"></i></span> Descripción</h6>
 <div class="paragraph">
-<p><strong>API</strong> es ..</p>
+<p>La API REST de Redmine permite que la interfaz web consulte y cree incidencias utilizando solicitudes HTTP en formato JSON. Para este proyecto se utilizó la cuenta limitada <code>frontend_tickets</code>, asociada al rol <code>Emisor API</code> dentro del proyecto <strong>Sistema de Tickets</strong>.</p>
 </div>
+<div class="paragraph">
+<p>La autenticación se envía mediante el encabezado <code>X-Redmine-API-Key</code>. La API key real no se incorpora en los archivos versionados ni en las capturas; se almacena únicamente en el archivo local <code>frontend/config.local.js</code>.</p>
+</div>
+<div class="paragraph">
+<p>La configuración identificada durante las pruebas fue:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Elemento</th>
+<th class="tableblock halign-left valign-top">Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URL base</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>http://localhost</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Proyecto</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Sistema de Tickets</code> (<code>project_id: 1</code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tracker</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Bug</code> (<code>tracker_id: 1</code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Prioridades</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Baja <code>1</code>, Normal <code>2</code>, Alta <code>3</code>, Urgente <code>4</code></p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect5">
 <h6 id="_herramientas"><span class="icon"><i class="fa fa-cube"></i></span> Herramientas</h6>
@@ -795,28 +902,77 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><span class="icon"><i class="fa fa-plug"></i></span> <a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client">REST Client - Extensión de Visual Studio Code</a></p>
 </li>
 <li>
-<p>u otro que se desee utilizar que sea similar a <a href="https://www.postman.com/">Postman</a></p>
-<div class="paragraph">
-<p><span class="icon"><i class="fa fa-warning"></i></span> <strong class="black yellow-background">NOTA 5:</strong> En el caso de usar otro cliente para las pruebas, favor documentar los pasos necesarios para realizar la prueba en su totalidad.</p>
-</div>
+<p><code>curl</code> desde la terminal de Debian para validar el backend antes de utilizar la interfaz web.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect5">
-<h6 id="_listado_antes_de_la_prueba_de_envió"><span class="icon"><i class="fa fa-list"></i></span> Listado antes de la prueba de envió</h6>
+<h6 id="_identificación_de_recursos_de_redmine"><span class="icon"><i class="fa fa-search"></i></span> Identificación de recursos de Redmine</h6>
+<div class="paragraph">
+<p>Antes de enviar un ticket, se consultaron los identificadores reales que exige Redmine. Estas consultas se autenticaron con la API key del usuario <code>frontend_tickets</code>.</p>
+</div>
+<div class="sect6">
+<h7 id="_capturas_de_pantalla_3"><span class="icon"><i class="fa fa-picture-o"></i></span> Capturas de pantalla</h7>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Consulta del proyecto</p>
+<div class="paragraph">
+<p>La respuesta identifica el proyecto <strong>Sistema de Tickets</strong> con <code>id: 1</code>.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="imagenes/api_proyectos_consulta.png" alt="api proyectos consulta" width="1000">
+</div>
+</div>
+</li>
+<li>
+<p>Consulta de trackers</p>
+<div class="paragraph">
+<p>La respuesta muestra que el tracker <strong>Bug</strong> utiliza <code>id: 1</code> y tiene el estado inicial <strong>New</strong>.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="imagenes/api_trackers_consulta.png" alt="api trackers consulta" width="780">
+</div>
+</div>
+</li>
+<li>
+<p>Consulta de prioridades</p>
+<div class="paragraph">
+<p>La respuesta confirma los IDs utilizados por los botones de prioridad del formulario: Low <code>1</code>, Normal <code>2</code>, High <code>3</code> y Urgent <code>4</code>.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="imagenes/api_prioridades_consulta.png" alt="api prioridades consulta" width="780">
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_listado_antes_de_la_prueba_de_envío"><span class="icon"><i class="fa fa-list"></i></span> Listado antes de la prueba de envío</h6>
 <div class="sect6">
 <h7 id="_código"><span class="icon"><i class="fa fa-code"></i></span> Código</h7>
 <div class="ulist">
 <ul>
 <li>
-<p><span class="icon"><i class="fa fa-gear"></i></span> list.http</p>
+<p><span class="icon"><i class="fa fa-gear"></i></span> <code>fuente/list.http</code></p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">### Test API redmine
-@key = ...
-### List issues
-GET https://npr3s.com/control/projects/...</code></pre>
+<pre class="highlightjs highlight"><code class="language-http hljs" data-lang="http">### API REST de Redmine - Listar tickets
+### Copiar este archivo y sustituir SOLO la API key de la cuenta frontend_tickets.
+@baseUrl = http://localhost
+@apiKey = REEMPLAZAR_CON_API_KEY_LOCAL
+@projectId = 1
+
+### Listado de tickets del proyecto
+GET {{baseUrl}}/issues.json?project_id={{projectId}}&amp;status_id=*
+Accept: application/json
+X-Redmine-API-Key: {{apiKey}}</code></pre>
 </div>
 </div>
 </li>
@@ -824,171 +980,199 @@ GET https://npr3s.com/control/projects/...</code></pre>
 </div>
 </div>
 <div class="sect6">
-<h7 id="_captura_de_pantalla_5"><span class="icon"><i class="fa fa-picture-o"></i></span> Captura de pantalla</h7>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="icon"><i class="fa fa-gear"></i></span> list.http</p>
+<h7 id="_captura_de_pantalla_3"><span class="icon"><i class="fa fa-picture-o"></i></span> Captura de pantalla</h7>
+<div class="paragraph">
+<p>La consulta <code>GET /issues.json</code> fue aceptada con <code>HTTP/1.1 200 OK</code>. El listado se filtra con <code>project_id=1</code> y <code>status_id=*</code>, por lo que puede utilizarse tanto antes como después de las pruebas de envío.</p>
+</div>
 <div class="imageblock text-center">
 <div class="content">
-<img src="imagenes/api_test_01.png" alt="api test 01" width="1000">
+<img src="imagenes/api_listado_issues_http_200.png" alt="api listado issues http 200" width="1000">
 </div>
-</div>
-</li>
-</ul>
 </div>
 </div>
 </div>
 <div class="sect5">
-<h6 id="_prueba_de_envió"><span class="icon"><i class="fa fa-send"></i></span> Prueba de envió</h6>
+<h6 id="_prueba_de_envío"><span class="icon"><i class="fa fa-send"></i></span> Prueba de envío</h6>
 <div class="sect6">
 <h7 id="_código_2"><span class="icon"><i class="fa fa-code"></i></span> Código</h7>
 <div class="ulist">
 <ul>
 <li>
-<p><span class="icon"><i class="fa fa-gear"></i></span> send.http</p>
+<p><span class="icon"><i class="fa fa-gear"></i></span> <code>fuente/send.http</code></p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">### Test API redmine
-@key = ...
-### Send issue
-POST https://npr3s.com/control/projects/...</code></pre>
+<pre class="highlightjs highlight"><code class="language-http hljs" data-lang="http">### API REST de Redmine - Crear ticket
+### Copiar este archivo y sustituir SOLO la API key de la cuenta frontend_tickets.
+@baseUrl = http://localhost
+@apiKey = REEMPLAZAR_CON_API_KEY_LOCAL
+@projectId = 1
+@trackerId = 1
+@normalPriorityId = 2
+
+### Crear una incidencia de prueba
+POST {{baseUrl}}/issues.json
+Content-Type: application/json
+Accept: application/json
+X-Redmine-API-Key: {{apiKey}}
+
+{
+  "issue": {
+    "project_id": {{projectId}},
+    "tracker_id": {{trackerId}},
+    "subject": "Prueba directa de API",
+    "description": "Ticket creado mediante la API REST de Redmine.",
+    "priority_id": {{normalPriorityId}}
+  }
+}</code></pre>
 </div>
 </div>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>El endpoint utilizado para registrar una incidencia es <code>POST /issues.json</code>. Se envían el identificador del proyecto, el tracker, el asunto, la descripción y la prioridad.</p>
 </div>
 </div>
 <div class="sect6">
-<h7 id="_captura_de_pantalla_6"><span class="icon"><i class="fa fa-picture-o"></i></span> Captura de pantalla</h7>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="icon"><i class="fa fa-gear"></i></span> send.http</p>
+<h7 id="_captura_de_pantalla_4"><span class="icon"><i class="fa fa-picture-o"></i></span> Captura de pantalla</h7>
+<div class="paragraph">
+<p>La prueba directa con <code>curl</code> devolvió <code>HTTP/1.1 201 Created</code>. Este resultado valida que el usuario <code>frontend_tickets</code>, el rol <code>Emisor API</code>, el workflow y el tracker <strong>Bug</strong> permiten crear incidencias mediante la API.</p>
+</div>
 <div class="imageblock text-center">
 <div class="content">
-<img src="imagenes/api_test_02.png" alt="api test 02" width="1000">
+<img src="imagenes/api_envio_ticket_http_201.png" alt="api envio ticket http 201" width="1000">
 </div>
-</div>
-</li>
-</ul>
 </div>
 </div>
 </div>
 <div class="sect5">
-<h6 id="_listado_después_de_la_prueba_de_envió"><span class="icon"><i class="fa fa-list"></i></span> Listado después de la prueba de envió</h6>
+<h6 id="_listado_después_de_la_prueba_de_envío"><span class="icon"><i class="fa fa-list"></i></span> Listado después de la prueba de envío</h6>
 <div class="sect6">
-<h7 id="_código_3"><span class="icon"><i class="fa fa-code"></i></span> Código</h7>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="icon"><i class="fa fa-gear"></i></span> list.http</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">### Test API redmine
-@key = ...
-### List issues
-GET https://npr3s.com/control/projects/...</code></pre>
+<h7 id="_captura_de_pantalla_5"><span class="icon"><i class="fa fa-picture-o"></i></span> Captura de pantalla</h7>
+<div class="paragraph">
+<p>La lista de incidencias de Redmine muestra las pruebas directas creadas por API y el ticket generado posteriormente desde la interfaz web. Los tickets permanecen con tracker <strong>Bug</strong>, estado <strong>New</strong> y prioridad <strong>Normal</strong>.</p>
 </div>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect6">
-<h7 id="_captura_de_pantalla_7"><span class="icon"><i class="fa fa-picture-o"></i></span> Captura de pantalla</h7>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="icon"><i class="fa fa-gear"></i></span> list.http</p>
 <div class="imageblock text-center">
 <div class="content">
-<img src="imagenes/api_test_03.png" alt="api test 03" width="1000">
+<img src="imagenes/frontend_ticket_texto_redmine.png" alt="frontend ticket texto redmine" width="1000">
 </div>
-</div>
-</li>
-<li>
-<p><span class="icon"><i class="fa fa-ticket"></i></span> <a href="https://npr3s.com/control/projects/gti-0868-0498/issues">Peticiones en Proyecto gti-0868-0498 de Redmine</a></p>
-<div class="imageblock text-center">
-<div class="content">
-<img src="imagenes/api_test_04.png" alt="api test 04" width="1000">
-</div>
-</div>
-</li>
-</ul>
 </div>
 </div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_frontend">3.1.3.3. <span class="icon"><i class="fa fa-code"></i></span> FRONTEND</h5>
+<h5 id="_frontend">1.1.3.3. <span class="icon"><i class="fa fa-code"></i></span> FRONTEND</h5>
 <div class="sect5">
 <h6 id="_clonación"><span class="icon"><i class="fa fa-github"></i></span> Clonación</h6>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">git clone enlace</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">git clone https://github.com/JJBR2662/Sistema_Tickets_Gober.git
+cd Sistema_Tickets_Gober</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p><span class="icon"><i class="fa fa-warning"></i></span> <strong class="black yellow-background">NOTA 4:</strong> Aquí va(n) una(s) captura(s) de pantalla(s)</p>
 </div>
 </div>
 <div class="sect5">
-<h6 id="_instalación_2"><span class="icon"><i class="fa fa-download"></i></span> Instalación</h6>
+<h6 id="_instalación_y_configuración_local"><span class="icon"><i class="fa fa-download"></i></span> Instalación y configuración local</h6>
+<div class="paragraph">
+<p>La interfaz está desarrollada con HTML, CSS y JavaScript, por lo que no requiere instalar dependencias mediante npm. Para mantener la API key fuera del repositorio, se debe crear un archivo local a partir de la plantilla:</p>
+</div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">comandos para instalar el aplicativo de demostración</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cp frontend/config.example.js frontend/config.local.js</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="icon"><i class="fa fa-warning"></i></span> <strong class="black yellow-background">NOTA 4:</strong> Aquí va(n) una(s) captura(s) de pantalla(s)</p>
+<p>En <code>frontend/config.local.js</code> se configura la API key de <code>frontend_tickets</code>. Los identificadores reales de proyecto, tracker y prioridades ya están documentados en la sección de API. La API key no debe subirse a GitHub.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">window.REDMINE_CONFIG = {
+  baseUrl: '',
+  apiKey: 'REEMPLAZAR_SOLO_EN_CONFIG_LOCAL',
+  projectId: 1,
+  trackerId: 1,
+  priorityIds: { low: 1, normal: 2, high: 3, urgent: 4 },
+  collectPublicIp: false,
+  maxImageBytes: 5 * 1024 * 1024,
+};</code></pre>
+</div>
 </div>
 </div>
 <div class="sect5">
 <h6 id="_ejecución_2"><span class="icon"><i class="fa fa-terminal"></i></span> Ejecución</h6>
+<div class="paragraph">
+<p>El frontend se publicó con Apache mediante el alias <code>/tickets/</code>. Al compartir el mismo origen <code>http://localhost</code> con Redmine, las solicitudes hacia <code>/uploads.json</code> e <code>/issues.json</code> no requieren una configuración adicional de CORS.</p>
+</div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">comandos para ejecutar el aplicativo de demostración</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"># El alias ya fue habilitado en Apache durante la integración.
+sudo a2enconf tickets-frontend
+sudo apache2ctl configtest
+sudo systemctl reload apache2
+
+# Abrir la aplicación desde Windows:
+# http://localhost/tickets/</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_prueba_de_envío_de_texto"><span class="icon"><i class="fa fa-send"></i></span> Prueba de envío de texto</h6>
+<div class="sect6">
+<h7 id="_captura_de_pantalla_6"><span class="icon"><i class="fa fa-picture-o"></i></span> Captura de pantalla</h7>
+<div class="paragraph">
+<p>La primera prueba se realizó enviando asunto, descripción y prioridad normal sin adjuntar un archivo. El formulario informó que Redmine registró correctamente el ticket <code>#3</code>.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="imagenes/frontend_envio_texto_exitoso.png" alt="frontend envio texto exitoso" width="800">
+</div>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_verificación_del_ticket_de_texto_en_redmine"><span class="icon"><i class="fa fa-list"></i></span> Verificación del ticket de texto en Redmine</h6>
+<div class="sect6">
+<h7 id="_captura_de_pantalla_7"><span class="icon"><i class="fa fa-picture-o"></i></span> Captura de pantalla</h7>
+<div class="paragraph">
+<p>La lista de incidencias del proyecto muestra el ticket <code>#3</code> creado desde la interfaz, además de las dos pruebas directas realizadas desde la API.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="imagenes/frontend_ticket_texto_redmine.png" alt="frontend ticket texto redmine" width="1000">
+</div>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_prueba_de_envío_con_captura_de_pantalla"><span class="icon"><i class="fa fa-picture-o"></i></span> Prueba de envío con captura de pantalla</h6>
+<div class="paragraph">
+<p>El formulario valida que el archivo sea una imagen y limita su tamaño a 5 MB. Al seleccionar una captura, <code>app.js</code> ejecuta primero <code>POST /uploads.json</code> para obtener un token y después ejecuta <code>POST /issues.json</code>, incluyendo el token dentro de <code>uploads</code>.</p>
+</div>
+<div class="paragraph">
+<p>La segunda prueba se realizó con una captura de pantalla adjunta y produjo el ticket <code>#4</code>.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="imagenes/frontend_envio_imagen_exitoso.png" alt="frontend envio imagen exitoso" width="820">
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_resultado_de_integración"><span class="icon"><i class="fa fa-check"></i></span> Resultado de integración</h6>
+<div class="paragraph">
+<p>Las pruebas demuestran que la cadena completa funciona correctamente:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">Formulario web
+   -&gt; POST /uploads.json (solo cuando existe una imagen)
+   -&gt; POST /issues.json
+   -&gt; API REST de Redmine
+   -&gt; MariaDB</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p><span class="icon"><i class="fa fa-warning"></i></span> <strong class="black yellow-background">NOTA 4:</strong> Aquí va(n) una(s) captura(s) de pantalla(s)</p>
-</div>
-</div>
-<div class="sect5">
-<h6 id="_prueba_de_envió_2"><span class="icon"><i class="fa fa-send"></i></span> Prueba de envió</h6>
-<div class="sect6">
-<h7 id="_captura_de_pantalla_8"><span class="icon"><i class="fa fa-picture-o"></i></span> Captura de pantalla</h7>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="icon"><i class="fa fa-gear"></i></span> App</p>
-<div class="imageblock text-center">
-<div class="content">
-<img src="imagenes/app_test_01.png" alt="app test 01" width="1000">
-</div>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect5">
-<h6 id="_verificación_de_envió"><span class="icon"><i class="fa fa-list"></i></span> Verificación de envió</h6>
-<div class="sect6">
-<h7 id="_captura_de_pantalla_9"><span class="icon"><i class="fa fa-picture-o"></i></span> Captura de pantalla</h7>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="icon"><i class="fa fa-ticket"></i></span> <a href="https://npr3s.com/control/projects/gti-0868-0498/issues">Peticiones en Proyecto gti-0868-0498 de Redmine</a></p>
-<div class="imageblock text-center">
-<div class="content">
-<img src="imagenes/app_test_02.png" alt="app test 02" width="1000">
-</div>
-</div>
-</li>
-</ul>
-</div>
+<p>El ticket de texto y el ticket con captura fueron creados con el usuario <code>frontend_tickets</code>. Redmine conserva el asunto, la descripción, la prioridad, el estado inicial y, cuando corresponde, el archivo adjunto.</p>
 </div>
 </div>
 <div class="sect5">
@@ -996,41 +1180,1051 @@ GET https://npr3s.com/control/projects/...</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p>fuente/ejemplo.html</p>
+<p><code>frontend/index.html</code></p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;HTML&gt;
-  &lt;HEADER&gt;
-  &lt;/HEADER&gt;
-  &lt;BODY&gt;
-  &lt;/BODY&gt;
-&lt;/HTML&gt;</code></pre>
+<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+
+&lt;head&gt;
+  &lt;meta charset="UTF-8" /&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+  &lt;title&gt;Sistema de Tickets&lt;/title&gt;
+  &lt;link rel="stylesheet" href="styles.css" /&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+  &lt;header class="navbar"&gt;
+    &lt;div class="navbar-brand"&gt;
+      &lt;svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+        &lt;path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2" /&gt;
+        &lt;rect x="9" y="3" width="6" height="4" rx="1" /&gt;
+        &lt;path d="M9 12h6M9 16h4" /&gt;
+      &lt;/svg&gt;
+      &lt;span&gt;Sistema de Tickets&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="navbar-badge"&gt;Redmine API&lt;/div&gt;
+  &lt;/header&gt;
+
+  &lt;main class="main-content"&gt;
+
+    &lt;div class="page-title"&gt;
+      &lt;h1&gt;Reportar un Problema&lt;/h1&gt;
+      &lt;p&gt;Completa el formulario para enviar un ticket al equipo de soporte.&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;div class="card"&gt;
+
+      &lt;div class="card-header"&gt;
+        &lt;svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+          &lt;circle cx="12" cy="12" r="10" /&gt;
+          &lt;line x1="12" y1="8" x2="12" y2="12" /&gt;
+          &lt;line x1="12" y1="16" x2="12.01" y2="16" /&gt;
+        &lt;/svg&gt;
+        &lt;span&gt;Nuevo Ticket&lt;/span&gt;
+      &lt;/div&gt;
+
+      &lt;form id="ticketForm" class="ticket-form" novalidate&gt;
+
+        &lt;div class="form-group"&gt;
+          &lt;label for="subject"&gt;
+            &lt;svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+              &lt;path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7" /&gt;
+              &lt;path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z" /&gt;
+            &lt;/svg&gt;
+            Asunto &lt;span class="required"&gt;*&lt;/span&gt;
+          &lt;/label&gt;
+          &lt;input type="text" id="subject" name="subject" placeholder="Describe brevemente el problema..."
+            maxlength="120" required /&gt;
+          &lt;span class="char-count" id="subjectCount"&gt;0 / 120&lt;/span&gt;
+          &lt;span class="field-error" id="subjectError"&gt;El asunto es obligatorio.&lt;/span&gt;
+        &lt;/div&gt;
+
+        &lt;div class="form-group"&gt;
+          &lt;label for="description"&gt;
+            &lt;svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+              &lt;line x1="17" y1="10" x2="3" y2="10" /&gt;
+              &lt;line x1="21" y1="6" x2="3" y2="6" /&gt;
+              &lt;line x1="21" y1="14" x2="3" y2="14" /&gt;
+              &lt;line x1="17" y1="18" x2="3" y2="18" /&gt;
+            &lt;/svg&gt;
+            Descripción
+          &lt;/label&gt;
+          &lt;textarea id="description" name="description" rows="4"
+            placeholder="Detalla el problema, pasos para reproducirlo, comportamiento esperado..."&gt;&lt;/textarea&gt;
+        &lt;/div&gt;
+
+        &lt;div class="form-group"&gt;
+          &lt;label for="screenshot"&gt;
+            &lt;svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+              &lt;rect x="3" y="3" width="18" height="18" rx="2" /&gt;
+              &lt;circle cx="8.5" cy="8.5" r="1.5" /&gt;
+              &lt;polyline points="21 15 16 10 5 21" /&gt;
+            &lt;/svg&gt;
+            Captura de Pantalla
+          &lt;/label&gt;
+          &lt;div class="upload-area" id="uploadArea"&gt;
+            &lt;input type="file" id="screenshot" name="screenshot" accept="image/*" hidden /&gt;
+            &lt;div class="upload-placeholder" id="uploadPlaceholder"&gt;
+              &lt;svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"&gt;
+                &lt;polyline points="16 16 12 12 8 16" /&gt;
+                &lt;line x1="12" y1="12" x2="12" y2="21" /&gt;
+                &lt;path d="M20.39 18.39A5 5 0 0018 9h-1.26A8 8 0 103 16.3" /&gt;
+              &lt;/svg&gt;
+              &lt;p&gt;Arrastra una imagen aquí o &lt;span class="upload-link"&gt;haz clic para seleccionar&lt;/span&gt;&lt;/p&gt;
+              &lt;small&gt;PNG, JPG, GIF — máx. 5 MB&lt;/small&gt;
+            &lt;/div&gt;
+            &lt;div class="image-preview hidden" id="imagePreview"&gt;
+              &lt;img id="previewImg" src="" alt="Vista previa" /&gt;
+              &lt;button type="button" class="remove-image" id="removeImage" title="Quitar imagen"&gt;
+                &lt;svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+                  &lt;line x1="18" y1="6" x2="6" y2="18" /&gt;
+                  &lt;line x1="6" y1="6" x2="18" y2="18" /&gt;
+                &lt;/svg&gt;
+              &lt;/button&gt;
+              &lt;span id="fileName" class="file-name"&gt;&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="form-group priority-row"&gt;
+          &lt;label&gt;
+            &lt;svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+              &lt;polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /&gt;
+            &lt;/svg&gt;
+            Prioridad
+          &lt;/label&gt;
+          &lt;div class="priority-options"&gt;
+            &lt;label class="priority-btn"&gt;
+              &lt;input type="radio" name="priority" value="1" /&gt;
+              &lt;span class="prio-low"&gt;Baja&lt;/span&gt;
+            &lt;/label&gt;
+            &lt;label class="priority-btn"&gt;
+              &lt;input type="radio" name="priority" value="2" checked /&gt;
+              &lt;span class="prio-normal"&gt;Normal&lt;/span&gt;
+            &lt;/label&gt;
+            &lt;label class="priority-btn"&gt;
+              &lt;input type="radio" name="priority" value="3" /&gt;
+              &lt;span class="prio-high"&gt;Alta&lt;/span&gt;
+            &lt;/label&gt;
+            &lt;label class="priority-btn"&gt;
+              &lt;input type="radio" name="priority" value="4" /&gt;
+              &lt;span class="prio-urgent"&gt;Urgente&lt;/span&gt;
+            &lt;/label&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="form-actions"&gt;
+          &lt;button type="reset" class="btn-secondary" id="resetBtn"&gt;
+            &lt;svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+              &lt;polyline points="1 4 1 10 7 10" /&gt;
+              &lt;path d="M3.51 15a9 9 0 102.13-9.36L1 10" /&gt;
+            &lt;/svg&gt;
+            Limpiar
+          &lt;/button&gt;
+          &lt;button type="submit" class="btn-primary" id="submitBtn"&gt;
+            &lt;svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+              &lt;line x1="22" y1="2" x2="11" y2="13" /&gt;
+              &lt;polygon points="22 2 15 22 11 13 2 9 22 2" /&gt;
+            &lt;/svg&gt;
+            &lt;span id="submitLabel"&gt;Enviar Ticket&lt;/span&gt;
+          &lt;/button&gt;
+        &lt;/div&gt;
+
+      &lt;/form&gt;
+    &lt;/div&gt;
+
+  &lt;/main&gt;
+
+  &lt;div class="toast hidden" id="toast"&gt;
+    &lt;div class="toast-icon" id="toastIcon"&gt;&lt;/div&gt;
+    &lt;div class="toast-content"&gt;
+      &lt;strong id="toastTitle"&gt;&lt;/strong&gt;
+      &lt;p id="toastMessage"&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button class="toast-close" id="toastClose"&gt;
+      &lt;svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+        &lt;line x1="18" y1="6" x2="6" y2="18" /&gt;
+        &lt;line x1="6" y1="6" x2="18" y2="18" /&gt;
+      &lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;script src="config.local.js"&gt;&lt;/script&gt;
+  &lt;script src="app.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
 </div>
 </div>
 </li>
 <li>
-<p>fuente/ejemplo.css</p>
+<p><code>frontend/styles.css</code></p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-css hljs" data-lang="css">body {
-  background-color: blue;
+<pre class="highlightjs highlight"><code class="language-css hljs" data-lang="css">:root {
+  --red: #D32F2F;
+  --red-dark: #B71C1C;
+  --red-light: #FFEBEE;
+  --blue: #1565C0;
+  --blue-dark: #0D47A1;
+  --blue-light: #E3F2FD;
+  --white: #FFFFFF;
+  --gray-50: #F8F9FA;
+  --gray-100: #F1F3F5;
+  --gray-200: #E9ECEF;
+  --gray-400: #ADB5BD;
+  --gray-600: #6C757D;
+  --gray-800: #343A40;
+  --success: #2E7D32;
+  --success-bg: #E8F5E9;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, .10);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, .12);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, .15);
+  --radius: 10px;
+  --transition: 0.2s ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--gray-100);
+  color: var(--gray-800);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+.navbar {
+  background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 60%, #1976D2 100%);
+  color: var(--white);
+  padding: 0 2rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(13, 71, 161, .35);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: .3px;
+}
+
+.brand-icon {
+  width: 26px;
+  height: 26px;
+  color: var(--white);
+}
+
+.navbar-badge {
+  background: rgba(255, 255, 255, .18);
+  border: 1px solid rgba(255, 255, 255, .35);
+  color: var(--white);
+  font-size: .75rem;
+  font-weight: 600;
+  padding: .25rem .75rem;
+  border-radius: 20px;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
+
+.main-content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2.5rem 1rem 3rem;
+}
+
+.page-title {
+  margin-bottom: 1.75rem;
+  text-align: center;
+}
+
+.page-title h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--blue-dark);
+  margin-bottom: .35rem;
+}
+
+.page-title p {
+  color: var(--gray-600);
+  font-size: .95rem;
+}
+
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.card-header {
+  background: linear-gradient(135deg, var(--red-dark) 0%, var(--red) 100%);
+  color: var(--white);
+  padding: 1.1rem 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: .2px;
+}
+
+.card-header svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.ticket-form {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: .45rem;
+  position: relative;
+}
+
+.form-group label {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  font-size: .875rem;
+  font-weight: 600;
+  color: var(--gray-800);
+}
+
+.form-group label svg {
+  width: 15px;
+  height: 15px;
+  color: var(--blue);
+  flex-shrink: 0;
+}
+
+.required {
+  color: var(--red);
+  font-size: 1rem;
+  line-height: 1;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: .7rem 1rem;
+  border: 1.5px solid var(--gray-200);
+  border-radius: 8px;
+  font-size: .95rem;
+  font-family: inherit;
+  color: var(--gray-800);
+  background: var(--white);
+  transition: border-color var(--transition), box-shadow var(--transition);
+  outline: none;
+  resize: none;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(21, 101, 192, .12);
+}
+
+input[type="text"].invalid,
+textarea.invalid {
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(211, 47, 47, .10);
+}
+
+.char-count {
+  align-self: flex-end;
+  font-size: .75rem;
+  color: var(--gray-400);
+  margin-top: .15rem;
+}
+
+.field-error {
+  font-size: .78rem;
+  color: var(--red);
+  display: none;
+}
+
+.field-error.visible {
+  display: block;
+}
+
+.upload-area {
+  border: 2px dashed var(--gray-200);
+  border-radius: 8px;
+  transition: border-color var(--transition), background var(--transition);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.upload-area:hover {
+  border-color: var(--blue);
+  background: var(--blue-light);
+}
+
+.upload-area.drag-over {
+  border-color: var(--blue);
+  background: var(--blue-light);
+}
+
+.upload-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  gap: .5rem;
+  text-align: center;
+}
+
+.upload-placeholder svg {
+  width: 36px;
+  height: 36px;
+  color: var(--gray-400);
+  margin-bottom: .25rem;
+}
+
+.upload-placeholder p {
+  font-size: .9rem;
+  color: var(--gray-600);
+}
+
+.upload-link {
+  color: var(--blue);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.upload-placeholder small {
+  color: var(--gray-400);
+  font-size: .78rem;
+}
+
+.image-preview {
+  position: relative;
+  padding: .75rem;
+}
+
+.image-preview img {
+  width: 100%;
+  max-height: 260px;
+  object-fit: contain;
+  border-radius: 6px;
+  display: block;
+}
+
+.remove-image {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.1rem;
+  background: var(--red);
+  border: none;
+  color: var(--white);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: background var(--transition);
+}
+
+.remove-image:hover {
+  background: var(--red-dark);
+}
+
+.remove-image svg {
+  width: 14px;
+  height: 14px;
+}
+
+.file-name {
+  display: block;
+  margin-top: .4rem;
+  font-size: .78rem;
+  color: var(--gray-600);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.priority-row label:first-child {
+  margin-bottom: .1rem;
+}
+
+.priority-options {
+  display: flex;
+  gap: .6rem;
+  flex-wrap: wrap;
+}
+
+.priority-btn {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 0 !important;
+  cursor: pointer;
+}
+
+.priority-btn input[type="radio"] {
+  display: none;
+}
+
+.priority-btn span {
+  padding: .4rem .9rem;
+  border-radius: 20px;
+  font-size: .82rem;
+  font-weight: 600;
+  border: 1.5px solid var(--gray-200);
+  color: var(--gray-600);
+  background: var(--white);
+  transition: all var(--transition);
+  cursor: pointer;
+  user-select: none;
+}
+
+.priority-btn input:checked+.prio-low {
+  background: #E8F5E9;
+  border-color: #2E7D32;
+  color: #1B5E20;
+}
+
+.priority-btn input:checked+.prio-normal {
+  background: var(--blue-light);
+  border-color: var(--blue);
+  color: var(--blue-dark);
+}
+
+.priority-btn input:checked+.prio-high {
+  background: #FFF3E0;
+  border-color: #E65100;
+  color: #BF360C;
+}
+
+.priority-btn input:checked+.prio-urgent {
+  background: var(--red-light);
+  border-color: var(--red);
+  color: var(--red-dark);
+}
+
+.priority-btn span:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: .75rem;
+  padding-top: .5rem;
+  border-top: 1px solid var(--gray-200);
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .65rem 1.4rem;
+  border-radius: 8px;
+  font-size: .9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all var(--transition);
+  font-family: inherit;
+}
+
+.btn-primary svg,
+.btn-secondary svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.btn-secondary {
+  background: var(--gray-100);
+  color: var(--gray-600);
+  border: 1.5px solid var(--gray-200);
+}
+
+.btn-secondary:hover {
+  background: var(--gray-200);
+  color: var(--gray-800);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%);
+  color: var(--white);
+  box-shadow: 0 2px 6px rgba(211, 47, 47, .35);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--red-dark) 0%, #7F0000 100%);
+  box-shadow: 0 4px 12px rgba(211, 47, 47, .45);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-primary:disabled {
+  opacity: .65;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, .4);
+  border-top-color: var(--white);
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.toast {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  background: var(--white);
+  border-radius: 10px;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: flex-start;
+  gap: .85rem;
+  padding: 1rem 1.1rem;
+  max-width: 360px;
+  z-index: 999;
+  animation: slideIn .3s ease;
+  border-left: 4px solid var(--blue);
+}
+
+.toast.success {
+  border-left-color: var(--success);
+}
+
+.toast.error {
+  border-left-color: var(--red);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.toast-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: .1rem;
+}
+
+.toast-content {
+  flex: 1;
+}
+
+.toast-content strong {
+  display: block;
+  font-size: .9rem;
+  color: var(--gray-800);
+  margin-bottom: .15rem;
+}
+
+.toast-content p {
+  font-size: .82rem;
+  color: var(--gray-600);
+  line-height: 1.4;
+}
+
+.toast-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--gray-400);
+  padding: 0;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.toast-close:hover {
+  color: var(--gray-800);
+}
+
+.toast-close svg {
+  width: 16px;
+  height: 16px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (max-width: 520px) {
+  .navbar {
+    padding: 0 1rem;
+  }
+
+  .ticket-form {
+    padding: 1.25rem;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .priority-options {
+    gap: .4rem;
+  }
+
+  .toast {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    max-width: none;
+  }
 }</code></pre>
 </div>
 </div>
 </li>
 <li>
-<p>fuente/ejemplo.js</p>
+<p><code>frontend/config.example.js</code></p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">console.log('Hola Mundo!');</code></pre>
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">window.REDMINE_CONFIG = {
+  baseUrl: '',
+
+  apiKey: 'REEMPLAZAR_SOLO_EN_CONFIG_LOCAL',
+
+  projectId: 0,
+  trackerId: 0,
+
+  priorityIds: {
+    low: 1,
+    normal: 2,
+    high: 3,
+    urgent: 4,
+  },
+
+  collectPublicIp: false,
+
+  maxImageBytes: 5 * 1024 * 1024,
+};</code></pre>
 </div>
 </div>
 </li>
 <li>
-<p>fuente/ejemplo.ts</p>
+<p><code>frontend/app.js</code></p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">console.log('Hola Mundo!')</code></pre>
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">(function () {
+  const _cfg = window.REDMINE_CONFIG || {};
+  const REDMINE_URL = String(_cfg.baseUrl || '').replace(/\/+$/, '');
+  const REDMINE_KEY = String(_cfg.apiKey || '').trim();
+  const PROJECT_ID = Number(_cfg.projectId || 0);
+  const TRACKER_ID = Number(_cfg.trackerId || 0);
+  const COLLECT_IP = Boolean(_cfg.collectPublicIp);
+  const MAX_BYTES = Number(_cfg.maxImageBytes) || 5 * 1024 * 1024;
+  const PRIORITY_IDS = { low: 1, normal: 2, high: 3, urgent: 4, ...(_cfg.priorityIds || {}) };
+
+  const PRIORITY_BY_UI_VALUE = {
+    '1': PRIORITY_IDS.low,
+    '2': PRIORITY_IDS.normal,
+    '3': PRIORITY_IDS.high,
+    '4': PRIORITY_IDS.urgent,
+  };
+
+  const form = document.getElementById('ticketForm');
+  const subjectInput = document.getElementById('subject');
+  const subjectCount = document.getElementById('subjectCount');
+  const subjectError = document.getElementById('subjectError');
+  const uploadArea = document.getElementById('uploadArea');
+  const fileInput = document.getElementById('screenshot');
+  const uploadPlaceholder = document.getElementById('uploadPlaceholder');
+  const imagePreview = document.getElementById('imagePreview');
+  const previewImg = document.getElementById('previewImg');
+  const removeImage = document.getElementById('removeImage');
+  const fileName = document.getElementById('fileName');
+  const submitBtn = document.getElementById('submitBtn');
+  const submitLabel = document.getElementById('submitLabel');
+  const resetBtn = document.getElementById('resetBtn');
+  const toast = document.getElementById('toast');
+  const toastTitle = document.getElementById('toastTitle');
+  const toastMessage = document.getElementById('toastMessage');
+  const toastIcon = document.getElementById('toastIcon');
+  const toastClose = document.getElementById('toastClose');
+
+  function configurationError() {
+    if (!REDMINE_KEY || REDMINE_KEY.includes('REEMPLAZAR'))
+      return 'Falta la API key en config.local.js.';
+    if (!Number.isInteger(PROJECT_ID) || PROJECT_ID &lt; 1)
+      return 'Falta el projectId real en config.local.js.';
+    if (!Number.isInteger(TRACKER_ID) || TRACKER_ID &lt; 1)
+      return 'Falta el trackerId real en config.local.js.';
+    return '';
+  }
+
+  subjectInput.addEventListener('input', () =&gt; {
+    const len = subjectInput.value.length;
+    subjectCount.textContent = `${len} / 120`;
+    if (len &gt; 0) clearError(subjectInput, subjectError);
+  });
+
+  uploadArea.addEventListener('click', () =&gt; fileInput.click());
+  uploadArea.addEventListener('dragover', (e) =&gt; {
+    e.preventDefault();
+    uploadArea.classList.add('drag-over');
+  });
+  uploadArea.addEventListener('dragleave', () =&gt; uploadArea.classList.remove('drag-over'));
+  uploadArea.addEventListener('drop', (e) =&gt; {
+    e.preventDefault();
+    uploadArea.classList.remove('drag-over');
+    const file = e.dataTransfer.files[0];
+    if (file) showPreview(file);
+  });
+  fileInput.addEventListener('change', () =&gt; {
+    if (fileInput.files[0]) showPreview(fileInput.files[0]);
+  });
+
+  function showPreview(file) {
+    const err = validateImage(file);
+    if (err) { clearImage(); showToast('error', 'Archivo no válido', err); return; }
+    const reader = new FileReader();
+    reader.onload = (e) =&gt; {
+      const result = e.target.result;
+      if (typeof result === 'string') {
+        previewImg.src = result;
+        fileName.textContent = file.name;
+        uploadPlaceholder.classList.add('hidden');
+        imagePreview.classList.remove('hidden');
+      }
+    };
+    reader.readAsDataURL(file);
+  }
+
+  removeImage.addEventListener('click', (e) =&gt; { e.stopPropagation(); clearImage(); });
+  function clearImage() {
+    fileInput.value = '';
+    previewImg.src = '';
+    fileName.textContent = '';
+    imagePreview.classList.add('hidden');
+    uploadPlaceholder.classList.remove('hidden');
+  }
+
+  resetBtn.addEventListener('click', () =&gt; {
+    clearImage();
+    subjectCount.textContent = '0 / 120';
+    clearError(subjectInput, subjectError);
+  });
+
+  function showError(input, errorEl) { input.classList.add('invalid'); errorEl.classList.add('visible'); }
+  function clearError(input, errorEl) { input.classList.remove('invalid'); errorEl.classList.remove('visible'); }
+
+  function validate() {
+    let ok = true;
+    if (!subjectInput.value.trim()) { showError(subjectInput, subjectError); ok = false; }
+    return ok;
+  }
+
+  function validateImage(file) {
+    if (!file) return '';
+    if (!file.type.startsWith('image/')) return 'Solo se permiten archivos de imagen.';
+    if (file.size &gt; MAX_BYTES) return 'La imagen supera el tamaño máximo de 5 MB.';
+    return '';
+  }
+
+  let toastTimer;
+  function showToast(type, title, message) {
+    clearTimeout(toastTimer);
+    toastTitle.textContent = title;
+    toastMessage.textContent = message;
+    toastIcon.textContent = type === 'success' ? '✅' : '❌';
+    toast.className = `toast ${type}`;
+    toast.classList.remove('hidden');
+    toastTimer = setTimeout(hideToast, 6000);
+  }
+  function hideToast() { toast.classList.add('hidden'); }
+  toastClose.addEventListener('click', hideToast);
+
+  function setLoading(loading) {
+    submitBtn.disabled = loading;
+    submitLabel.textContent = loading ? 'Enviando...' : 'Enviar Ticket';
+    const existing = submitBtn.querySelector('.spinner');
+    const icon = submitBtn.querySelector('svg');
+    if (loading &amp;&amp; !existing) {
+      const spinner = document.createElement('div');
+      spinner.className = 'spinner';
+      submitBtn.insertBefore(spinner, submitBtn.firstChild);
+      if (icon) icon.classList.add('hidden');
+    } else if (!loading &amp;&amp; existing) {
+      existing.remove();
+      if (icon) icon.classList.remove('hidden');
+    }
+  }
+
+  async function getClientIP() {
+    if (!COLLECT_IP) return 'No recopilada.';
+    try {
+      const res = await fetch('https://api.ipify.org?format=json');
+      const data = await res.json();
+      return data.ip || 'No disponible.';
+    } catch { return 'No disponible.'; }
+  }
+
+  async function uploadImage(file) {
+    const res = await fetch(`${REDMINE_URL}/uploads.json?filename=${encodeURIComponent(file.name)}`, {
+      method: 'POST',
+      headers: {
+        'X-Redmine-API-Key': REDMINE_KEY,
+        'Content-Type': 'application/octet-stream',
+      },
+      body: file,
+    });
+    if (!res.ok) throw new Error(`Error al subir imagen: HTTP ${res.status}`);
+    const data = await res.json();
+    if (!data?.upload?.token) throw new Error('Redmine no devolvió el token de la imagen.');
+    return data.upload.token;
+  }
+
+  async function sendTicket(subject, description, priorityId, imageToken, imageName, imageType) {
+    const issue = {
+      project_id: PROJECT_ID,
+      tracker_id: TRACKER_ID,
+      subject,
+      description: description || '',
+      priority_id: priorityId,
+    };
+
+    if (imageToken) {
+      issue.uploads = [{
+        token: imageToken,
+        filename: imageName,
+        content_type: imageType || 'application/octet-stream',
+      }];
+    }
+
+    const res = await fetch(`${REDMINE_URL}/issues.json`, {
+      method: 'POST',
+      headers: {
+        'X-Redmine-API-Key': REDMINE_KEY,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ issue }),
+    });
+
+    if (!res.ok) {
+      const msgs = { 401: 'API key inválida.', 403: 'Sin permiso.', 422: 'Datos inválidos.', 500: 'Error en Redmine.' };
+      throw new Error(msgs[res.status] || `HTTP ${res.status}`);
+    }
+
+    const location = res.headers.get('Location') || '';
+    const match = location.match(/\/issues\/(\d+)/);
+    return match ? match[1] : null;
+  }
+
+  form.addEventListener('submit', async (e) =&gt; {
+    e.preventDefault();
+    if (!validate()) return;
+
+    const problem = configurationError();
+    if (problem) { showToast('error', 'Configuración pendiente', problem); return; }
+
+    setLoading(true);
+    try {
+      const ip = await getClientIP();
+      const now = new Date().toLocaleString('es-HN');
+      const rawSubject = subjectInput.value.trim();
+      const descriptionEl = document.getElementById('description');
+      const rawDescription = descriptionEl ? descriptionEl.value.trim() : '';
+      const priorityInput = document.querySelector('input[name="priority"]:checked');
+      const priorityUiVal = priorityInput ? priorityInput.value : '2';
+      const priorityId = Number(PRIORITY_BY_UI_VALUE[priorityUiVal]);
+
+      const description = [
+        rawDescription || 'Sin descripción adicional.',
+        '',
+        '--- Datos del reporte ---',
+        `Fecha local: ${now}`,
+        `IP pública: ${ip}`,
+      ].join('\n');
+
+      let imageToken = null;
+      let imageName = null;
+      let imageType = null;
+      const file = fileInput.files[0];
+      if (file) {
+        imageToken = await uploadImage(file);
+        imageName = file.name;
+        imageType = file.type || 'application/octet-stream';
+      }
+
+      const issueId = await sendTicket(rawSubject, description, priorityId, imageToken, imageName, imageType);
+      const extra = issueId ? ` Ticket #${issueId}.` : '';
+      showToast('success', 'Ticket enviado', `El ticket fue registrado correctamente en Redmine.${extra}`);
+      form.reset();
+      clearImage();
+      subjectCount.textContent = '0 / 120';
+    } catch (err) {
+      console.error(err);
+      showToast('error', 'Error al enviar', err.message || 'No se pudo conectar con Redmine.');
+    } finally {
+      setLoading(false);
+    }
+  });
+})();</code></pre>
 </div>
 </div>
 </li>
@@ -1040,188 +2234,153 @@ GET https://npr3s.com/control/projects/...</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_gestión">3.1.4. <span class="icon"><i class="fa fa-gear"></i></span> Gestión</h4>
+<h4 id="_gestión">1.1.4. <span class="icon"><i class="fa fa-gear"></i></span> Gestión</h4>
+<div class="paragraph">
+<p>Las operaciones de gestión se documentaron directamente desde la interfaz administrativa de Redmine. Para las pruebas sobre incidencias se utilizó el ticket temporal <code>#5</code>, creado dentro del proyecto <strong>Sistema de Tickets</strong>. Las operaciones de eliminación se dejaron en la pantalla de confirmación para preservar el proyecto y las evidencias de integración previamente creadas.</p>
+</div>
 <div class="sect4">
-<h5 id="_proyecto_12">3.1.4.1. <span class="icon"><i class="fa fa-book"></i></span> Proyecto 1/2</h5>
+<h5 id="_proyecto_12">1.1.4.1. <span class="icon"><i class="fa fa-book"></i></span> Proyecto 1/2</h5>
 <div class="sect5">
 <h6 id="_creación"><span class="icon"><i class="fa fa-plus"></i></span> Creación</h6>
 <div class="paragraph">
-<p><span class="icon"><i class="fa fa-warning"></i></span> <strong class="black yellow-background">NOTA 4:</strong> Aquí va(n) una(s) captura(s) de pantalla(s)</p>
+<p>El proyecto <strong>Sistema de Tickets</strong> fue creado como espacio de trabajo para la clase de Gobernabilidad. Desde este proyecto se administran los tickets enviados por el formulario web y las incidencias creadas durante las pruebas de gestión.</p>
 </div>
+<div class="sect6">
+<h7 id="_captura_de_pantalla_8"><span class="icon"><i class="fa fa-picture-o"></i></span> Captura de pantalla</h7>
+<div class="paragraph">
+<p>La lista de proyectos confirma que <strong>Sistema de Tickets</strong> se encuentra activo y disponible en Redmine.</p>
 </div>
-<div class="sect5">
-<h6 id="_captura_de_pantalla_10"><span class="icon"><i class="fa fa-picture-o"></i></span> Captura de pantalla</h6>
-<div class="ulist">
-<ul>
-<li>
-<p>Evidencia</p>
 <div class="imageblock text-center">
 <div class="content">
-<img src="imagenes/creacion_de_proyecto.png" alt="creacion de proyecto" width="1000">
+<img src="imagenes/gestion_creacion_proyecto.png" alt="gestion creacion proyecto" width="1000">
 </div>
 </div>
-</li>
-</ul>
 </div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_peticiones">3.1.4.2. <span class="icon"><i class="fa fa-ticket"></i></span> Peticiones</h5>
+<h5 id="_peticiones">1.1.4.2. <span class="icon"><i class="fa fa-ticket"></i></span> Peticiones</h5>
 <div class="sect5">
 <h6 id="_ver"><span class="icon"><i class="fa fa-eye"></i></span> Ver</h6>
 <div class="paragraph">
-<p><span class="icon"><i class="fa fa-warning"></i></span> <strong class="black yellow-background">NOTA 4:</strong> Aquí va(n) una(s) captura(s) de pantalla(s)</p>
+<p>Se creó la incidencia temporal <code>#5</code> con tracker <strong>Bug</strong>, estado inicial <strong>New</strong> y prioridad <strong>Normal</strong>. Posteriormente, el listado de incidencias permitió verificar su presencia junto con los tickets creados durante las pruebas de API y frontend.</p>
 </div>
-</div>
-<div class="sect5">
-<h6 id="_captura_de_pantalla_11"><span class="icon"><i class="fa fa-picture-o"></i></span> Captura de pantalla</h6>
-<div class="ulist">
-<ul>
+<div class="sect6">
+<h7 id="_capturas_de_pantalla_4"><span class="icon"><i class="fa fa-picture-o"></i></span> Capturas de pantalla</h7>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p>Evidencia</p>
+<p>Creación de la petición temporal</p>
 <div class="imageblock text-center">
 <div class="content">
-<img src="imagenes/ver_peticiones.png" alt="ver peticiones" width="1000">
+<img src="imagenes/gestion_creacion_peticion.png" alt="gestion creacion peticion" width="1000">
 </div>
 </div>
 </li>
-</ul>
+<li>
+<p>Listado de peticiones del proyecto</p>
+<div class="imageblock text-center">
+<div class="content">
+<img src="imagenes/gestion_ver_peticiones.png" alt="gestion ver peticiones" width="1000">
+</div>
+</div>
+</li>
+</ol>
+</div>
 </div>
 </div>
 <div class="sect5">
 <h6 id="_modificar"><span class="icon"><i class="fa fa-edit"></i></span> Modificar</h6>
 <div class="paragraph">
-<p><span class="icon"><i class="fa fa-warning"></i></span> <strong class="black yellow-background">NOTA 4:</strong> Aquí va(n) una(s) captura(s) de pantalla(s)</p>
+<p>La petición temporal se modificó cambiando su asunto a <strong>Ticket Modificado temporal de Gestion</strong>. El historial de la incidencia registra el valor original y el nuevo valor, lo que deja trazabilidad de la operación.</p>
 </div>
-</div>
-<div class="sect5">
-<h6 id="_captura_de_pantalla_12"><span class="icon"><i class="fa fa-picture-o"></i></span> Captura de pantalla</h6>
-<div class="ulist">
-<ul>
-<li>
-<p>Evidencia</p>
+<div class="sect6">
+<h7 id="_captura_de_pantalla_9"><span class="icon"><i class="fa fa-picture-o"></i></span> Captura de pantalla</h7>
 <div class="imageblock text-center">
 <div class="content">
-<img src="imagenes/modificar_peticiones.png" alt="modificar peticiones" width="1000">
+<img src="imagenes/gestion_modificar_peticiones.png" alt="gestion modificar peticiones" width="1000">
 </div>
 </div>
-</li>
-</ul>
 </div>
 </div>
 <div class="sect5">
 <h6 id="_priorizar"><span class="icon"><i class="fa fa-star"></i></span> Priorizar</h6>
 <div class="paragraph">
-<p><span class="icon"><i class="fa fa-warning"></i></span> <strong class="black yellow-background">NOTA 4:</strong> Aquí va(n) una(s) captura(s) de pantalla(s)</p>
+<p>La prioridad de la petición temporal se cambió de <strong>Normal</strong> a <strong>Urgent</strong>. El historial de cambios visible en Redmine confirma la modificación realizada sobre la incidencia.</p>
 </div>
-</div>
-<div class="sect5">
-<h6 id="_captura_de_pantalla_13"><span class="icon"><i class="fa fa-picture-o"></i></span> Captura de pantalla</h6>
-<div class="ulist">
-<ul>
-<li>
-<p>Evidencia</p>
+<div class="sect6">
+<h7 id="_captura_de_pantalla_10"><span class="icon"><i class="fa fa-picture-o"></i></span> Captura de pantalla</h7>
 <div class="imageblock text-center">
 <div class="content">
-<img src="imagenes/priorizar_peticiones.png" alt="priorizar peticiones" width="1000">
+<img src="imagenes/gestion_priorizar_peticiones.png" alt="gestion priorizar peticiones" width="1000">
 </div>
 </div>
-</li>
-</ul>
 </div>
 </div>
 <div class="sect5">
 <h6 id="_trabajo"><span class="icon"><i class="fa fa-wrench"></i></span> Trabajo</h6>
 <div class="paragraph">
-<p><span class="icon"><i class="fa fa-warning"></i></span> <strong class="black yellow-background">NOTA 4:</strong> Aquí va(n) una(s) captura(s) de pantalla(s)</p>
+<p>Se registró tiempo de trabajo en la petición temporal mediante la opción <strong>Log time</strong>. El detalle del ticket muestra <code>Spent time: 1:00 h</code>, evidenciando la capacidad de registrar esfuerzo asociado a una incidencia.</p>
 </div>
-</div>
-<div class="sect5">
-<h6 id="_captura_de_pantalla_14"><span class="icon"><i class="fa fa-picture-o"></i></span> Captura de pantalla</h6>
-<div class="ulist">
-<ul>
-<li>
-<p>Evidencia</p>
+<div class="sect6">
+<h7 id="_captura_de_pantalla_11"><span class="icon"><i class="fa fa-picture-o"></i></span> Captura de pantalla</h7>
 <div class="imageblock text-center">
 <div class="content">
-<img src="imagenes/trabajo_peticiones.png" alt="trabajo peticiones" width="1000">
+<img src="imagenes/gestion_trabajo_peticiones.png" alt="gestion trabajo peticiones" width="1000">
 </div>
 </div>
-</li>
-</ul>
 </div>
 </div>
 <div class="sect5">
 <h6 id="_eliminar"><span class="icon"><i class="fa fa-trash"></i></span> Eliminar</h6>
 <div class="paragraph">
-<p><span class="icon"><i class="fa fa-warning"></i></span> <strong class="black yellow-background">NOTA 4:</strong> Aquí va(n) una(s) captura(s) de pantalla(s)</p>
+<p>La interfaz permite eliminar una incidencia desde el menú de acciones. Redmine solicita confirmación antes de completar la operación. En esta evidencia se dejó la acción en la ventana de confirmación para conservar el ticket temporal usado en las demás pruebas de gestión.</p>
 </div>
-</div>
-<div class="sect5">
-<h6 id="_captura_de_pantalla_15"><span class="icon"><i class="fa fa-picture-o"></i></span> Captura de pantalla</h6>
-<div class="ulist">
-<ul>
-<li>
-<p>Evidencia</p>
+<div class="sect6">
+<h7 id="_captura_de_pantalla_12"><span class="icon"><i class="fa fa-picture-o"></i></span> Captura de pantalla</h7>
 <div class="imageblock text-center">
 <div class="content">
-<img src="imagenes/eliminar_peticiones.png" alt="eliminar peticiones" width="1000">
+<img src="imagenes/gestion_eliminar_peticiones.png" alt="gestion eliminar peticiones" width="1000">
 </div>
 </div>
-</li>
-</ul>
 </div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_proyecto_22">3.1.4.3. <span class="icon"><i class="fa fa-book"></i></span> Proyecto 2/2</h5>
+<h5 id="_proyecto_22">1.1.4.3. <span class="icon"><i class="fa fa-book"></i></span> Proyecto 2/2</h5>
 <div class="sect5">
 <h6 id="_modificar_2"><span class="icon"><i class="fa fa-edit"></i></span> Modificar</h6>
 <div class="paragraph">
-<p><span class="icon"><i class="fa fa-warning"></i></span> <strong class="black yellow-background">NOTA 4:</strong> Aquí va(n) una(s) captura(s) de pantalla(s)</p>
+<p>Desde <strong>Settings &gt; Project</strong> se modificó la descripción del proyecto <strong>Sistema de Tickets</strong>. La pantalla muestra el mensaje <strong>Successful update</strong> y los valores actualizados, lo cual confirma que Redmine permite administrar la información general del proyecto.</p>
 </div>
-</div>
-<div class="sect5">
-<h6 id="_captura_de_pantalla_16"><span class="icon"><i class="fa fa-picture-o"></i></span> Captura de pantalla</h6>
-<div class="ulist">
-<ul>
-<li>
-<p>Evidencia</p>
+<div class="sect6">
+<h7 id="_captura_de_pantalla_13"><span class="icon"><i class="fa fa-picture-o"></i></span> Captura de pantalla</h7>
 <div class="imageblock text-center">
 <div class="content">
-<img src="imagenes/modificar_proyecto.png" alt="modificar proyecto" width="1000">
+<img src="imagenes/gestion_modificar_proyecto.png" alt="gestion modificar proyecto" width="1000">
 </div>
 </div>
-</li>
-</ul>
 </div>
 </div>
 <div class="sect5">
 <h6 id="_eliminar_2"><span class="icon"><i class="fa fa-trash"></i></span> Eliminar</h6>
 <div class="paragraph">
-<p><span class="icon"><i class="fa fa-warning"></i></span> <strong class="black yellow-background">NOTA 4:</strong> Aquí va(n) una(s) captura(s) de pantalla(s)</p>
+<p>La eliminación de proyectos requiere una confirmación explícita: Redmine solicita escribir el identificador <code>sistema-tickets</code> antes de habilitar la eliminación definitiva. La operación no se confirmó, con el fin de conservar la instancia funcional, el proyecto de integración y los tickets documentados.</p>
 </div>
-</div>
-<div class="sect5">
-<h6 id="_captura_de_pantalla_17"><span class="icon"><i class="fa fa-picture-o"></i></span> Captura de pantalla</h6>
-<div class="ulist">
-<ul>
-<li>
-<p>Evidencia</p>
+<div class="sect6">
+<h7 id="_captura_de_pantalla_14"><span class="icon"><i class="fa fa-picture-o"></i></span> Captura de pantalla</h7>
 <div class="imageblock text-center">
 <div class="content">
-<img src="imagenes/eliminar_proyecto.png" alt="eliminar proyecto" width="1000">
+<img src="imagenes/gestion_eliminar_proyecto.png" alt="gestion eliminar proyecto" width="1000">
 </div>
 </div>
-</li>
-</ul>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_autor">3.2. <span class="icon"><i class="fa fa-users"></i></span> Autor</h3>
+<h3 id="_autor">1.2. <span class="icon"><i class="fa fa-users"></i></span> Autor</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 33.3333%;">
@@ -1237,25 +2396,25 @@ GET https://npr3s.com/control/projects/...</code></pre>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-hashtag"></i></span> 00000001</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-user"></i></span> Nombre de Alumno</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-hashtag"></i></span> 12251078</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-user"></i></span> Luis Varela</p></td>
 <td class="tableblock halign-right valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-percent"></i></span> 100%</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-hashtag"></i></span> 00000002</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-user"></i></span> &#8230;&#8203;</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-percent"></i></span> 50%</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-hashtag"></i></span> 12251021</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-user"></i></span> Carlos Flores</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-percent"></i></span> 100%</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-hashtag"></i></span> 0000000n</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-user"></i></span> Nombre de Alumno</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-percent"></i></span> 0%</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-hashtag"></i></span> 12241115</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-user"></i></span> Jose Bendaña</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-percent"></i></span> 100%</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_referencias">3.3. <span class="icon"><i class="fa fa-book"></i></span> Referencias</h3>
+<h3 id="_referencias">1.3. <span class="icon"><i class="fa fa-book"></i></span> Referencias</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1275,7 +2434,7 @@ GET https://npr3s.com/control/projects/...</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-06-10 10:03:58 -0600
+Last updated 2026-06-25 18:47:00 -0600
 </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>

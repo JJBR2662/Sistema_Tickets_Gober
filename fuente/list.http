@@ -1,4 +1,10 @@
-### Test API redmine
-@key = ...
-### List issues
-GET https://npr3s.com/control/projects/...
+### API REST de Redmine - Listar tickets
+### Copiar este archivo y sustituir SOLO la API key de la cuenta frontend_tickets.
+@baseUrl = http://localhost
+@apiKey = REEMPLAZAR_CON_API_KEY_LOCAL
+@projectId = 1
+
+### Listado de tickets del proyecto
+GET {{baseUrl}}/issues.json?project_id={{projectId}}&status_id=*
+Accept: application/json
+X-Redmine-API-Key: {{apiKey}}

@@ -1,4 +1,23 @@
-### Test API redmine
-@key = ...
-### Send issue
-POST https://npr3s.com/control/projects/...
+### API REST de Redmine - Crear ticket
+### Copiar este archivo y sustituir SOLO la API key de la cuenta frontend_tickets.
+@baseUrl = http://localhost
+@apiKey = REEMPLAZAR_CON_API_KEY_LOCAL
+@projectId = 1
+@trackerId = 1
+@normalPriorityId = 2
+
+### Crear una incidencia de prueba
+POST {{baseUrl}}/issues.json
+Content-Type: application/json
+Accept: application/json
+X-Redmine-API-Key: {{apiKey}}
+
+{
+  "issue": {
+    "project_id": {{projectId}},
+    "tracker_id": {{trackerId}},
+    "subject": "Prueba directa de API",
+    "description": "Ticket creado mediante la API REST de Redmine.",
+    "priority_id": {{normalPriorityId}}
+  }
+}
